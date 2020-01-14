@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/home')
 def getHome():
-  return render_template('home.html')
+  return render_template('home.html', active_page = 'home')
 
 @app.route('/about')
 def about():
@@ -16,5 +16,6 @@ def about():
 @app.route('/contact')
 def contact():
   return render_template('contact.html', phone = "99887766")
+  
 if __name__ == '__main__':
   app.run(host="0.0.0.0", threaded=True, port=5050, debug=True) 
