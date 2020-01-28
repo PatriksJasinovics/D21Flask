@@ -9,6 +9,10 @@ app = Flask(__name__)
 def params():
   return request.args
 
+@app.route("/post_req", methods = ['POST'])
+def post_req():
+  return request.args
+
 @app.route('/home')
 def getHome():
   return render_template('home.html', active_page = 'home')
